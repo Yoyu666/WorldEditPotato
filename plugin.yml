@@ -5,7 +5,30 @@ api: 2.0.0
 author: HuaYoyu
 website: 
 commands:
-/////
+toggleeditwand:
+  description: 
+  usage: "/toggleeditwand"
+  permission: worldeditor.command
+ /cut:
+  description: 
+  usage: "//cut"
+  permission: worldeditor.command
+ /copy:
+  description:  THIS THIS THIS ALL
+  usage: "//copy"
+  permission: worldeditor.command
+ /paste:
+  description: 
+  usage: "//paste"
+  permission: worldeditor.command
+ /sphere:
+  description: make a potato
+  usage: "//sphere <block> <radius>"
+  permission: worldeditor.command
+ /hsphere:
+  description:  make a potato with no have insde blocl
+  usage: "//hsphere <block> <radius>"
+  permission: worldeditor.command
 permissions:
     worldeditor:
         default: op
