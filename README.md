@@ -1,2 +1,14 @@
 # WorldEditPotato
-IS NO DONE YET✧٩(ˊωˋ*)و✧
+WorldEdit Plus
+BaseOn WorldEditor vINDEV
+
+SEE ALL COMMAND
+//help
+
+Todo
+//tree
+//lake
+//lavalake
+//house
+//flower
+//etc..
