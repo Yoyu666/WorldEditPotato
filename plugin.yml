@@ -5,3 +5,12 @@ api: 2.0.0
 author: HuaYoyu
 website: 
 commands:
+/////
+permissions:
+    worldeditor:
+        default: op
+        description: "All the permissions to use the World Editor"
+        children:
+            worldeditor.command:
+                default: op
+                description: "Allow the usage of the WorldEditor command"
