@@ -1,14 +1,11 @@
 # WorldEditPotato
-WorldEdit Plus
-BaseOn WorldEditor vINDEV
+-Version: vINDEV now.
 
-SEE ALL COMMAND
-//help
-
-Todo
-//tree
-//lake
-//lavalake
-//house
-//flower
-//etc..
+## Features✨
+*//help
+*//cut
+*//copy
+*//paste
+*//sphere
+*//hsphere
+*ETC...
