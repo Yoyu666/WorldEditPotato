@@ -1,0 +1,7 @@
+name: WorldEditPotato
+main: WorldEditor\WorldEditor
+version: INDEV
+api: 2.0.0
+author: HuaYoyu
+website: 
+commands:
