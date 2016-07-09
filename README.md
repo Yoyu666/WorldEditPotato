@@ -2,21 +2,21 @@
 -Version: v1.1 now.
 
 ## Features✨
-- [ ] use Potato to set pos1{break}..pos2{tap}
+- [x] use Potato to set pos1{break}..pos2{tap}
    - [x] edit config.yml to change other items to pos1,2
 - [x] //cut
 - [x] //copy
 - [x] //paste
-- [ ] //sphere
-- [ ] //hsphere
-- [ ] //desel
+- [x] //sphere
+- [x] //hsphere
+- [x] //desel
 - [ ] //limit
 - [ ] //pos1
 - [ ] //pos2
-- [ ] //set
-- [ ] //replace
+- [ ] //set     [Broken]
+- [ ] //replace [Broken]
 - [x] //help
-- [ ] //wand
+- [x] //wand
 - [ ] //undo
 * etc.
 
