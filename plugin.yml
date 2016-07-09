@@ -14,7 +14,7 @@ toggleeditwand:
   usage: "//cut"
   permission: worldeditor.command
  /copy:
-  description:  THIS THIS THIS ALL
+  description: 
   usage: "//copy"
   permission: worldeditor.command
  /paste:
