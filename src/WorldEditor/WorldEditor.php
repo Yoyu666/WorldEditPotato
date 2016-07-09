@@ -191,49 +191,49 @@ class WorldEditor extends PluginBase implements Listener, CommandExecutor{
 				break;
 			case "toggleeditwand":
 				if(!($sender instanceof Player)){
-                                $sender->sendMessage($this->prifks."ゲーム内で使用してください.");
+                                $sender->sendMessage($this->prifks."Please use in the game.");
                                 return true;
                                 break;
                                 }
 				$session = $this->session($sender);
 				$session["wand-usage"] = $session["wand-usage"] == true ? false:true;
                                 $this->sessions[$sender->getName()]["wand-usage"] = $session["wand-usage"];
-				$sender->sendMessage($this->prifks."ワンドを ".($session["wand-usage"] === true ? "enabled":"disabled")."に設定しました.");
+				$sender->sendMessage($this->prifks."The wand".($session["wand-usage"] === true ? "enabled":"disabled")."It was set to.");
                                 return true;
 				break;
 			case "wand":
 				if(!($sender instanceof Player)){
-                                $sender->sendMessage($this->prifks."ゲーム内で使用してください.");
+                                $sender->sendMessage($this->prifks."Please use in the game.");
                                 return true;
                                 break;
                                 }
 				if($sender->getInventory()->getItem($this->config->get("wand-item"))->getID() === Item::get($this->config->get("wand-item"))->getID()){
-					$sender->sendMessage($this->prifks."あなたはすでにワンドを持っています.");
+					$sender->sendMessage($this->prifks."You already have a wand.");
                                         return true;
 					break;
 				}elseif($sender->getGamemode() === 1){
-					$sender->sendMessage($this->prifks."あなたはクリエイティブモードです");
+					$sender->sendMessage($this->prifks."You are a creative mode");
 				}else{
                                         $sender->getInventory()->addItem(Item::get($this->config->get("wand-item")));
-                                        $sender->sendMessage($this->prifks."ブロックを壊して最初の場所を,ブロックをタップして2番目の場所を指定してください.");
+                                        $sender->sendMessage($this->prifks."The first place to break the block , please specify the second location by tapping the block.");
 				}
                                 return true;
 				break;
 			case "desel":
 				if(!($sender instanceof Player)){
-                                $sender->sendMessage($this->prifks."ゲーム内で使用してください.");
+                                $sender->sendMessage($this->prifks."Please use in the game.");
                                 return true;
                                 break;
                                 }
 				$session = $this->session($sender);
 				$session["selection"] = array(false, false);
                                 $this->sessions[$sender->getName()]["selection"] = $session["selection"];
-				$sender->sendMessage($this->prifks."選択を削除しました");
+				$sender->sendMessage($this->prifks."You have successfully deleted the selected");
                                 return true;
 				break;
 			case "limit":
 				if(!isset($args[0]) or trim($args[0]) === ""){
-					$sender->sendMessage($this->prifks."使用的方法: //limit <limit>");
+					$sender->sendMessage($this->prifks."Tips: //limit <limit>");
                                         return true;
 					break;
 				}
@@ -246,12 +246,12 @@ class WorldEditor extends PluginBase implements Listener, CommandExecutor{
 				}
 				$session["block-limit"] = $limit;
                                 $this->sessions[$sender->getName()]["block-limit"] = $session["block-limit"];
-				$sender->sendMessage($this->prifks."ブロック数制限を".($limit === -1 ? "infinite":$limit)." に変更しました.");
+				$sender->sendMessage($this->prifks."The number of blocks limit".($limit === -1 ? "infinite":$limit)." It has been changed to.");
                                 return true;
 				break;
 			case "pos1":
                                 if(!($sender instanceof Player)){
-			        $sender->sendMessage($this->prifks."ゲーム内で使用してください.");
+			        $sender->sendMessage($this->prifks."Please use in the game.");
 			        return true;
 			        break;
                                 }
@@ -260,7 +260,7 @@ class WorldEditor extends PluginBase implements Listener, CommandExecutor{
                                 break;
 			case "pos2":
                                 if(!($sender instanceof Player)){
-                                $sender->sendMessage($this->prifks."ゲーム内で使用してください.");
+                                $sender->sendMessage($this->prifks."Please use in the game.");
                                 return true;
                                 break;
                   
