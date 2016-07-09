@@ -1,5 +1,5 @@
 # WorldEditPotato
--Version: vINDEV now.
+-Version: v1.1 now.
 
 ## Features✨
 - [ ] use Potato to set pos1{break}..pos2{tap}
