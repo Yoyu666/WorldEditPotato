@@ -29,11 +29,11 @@ class WorldEditor extends PluginBase implements Listener, CommandExecutor{
                 if(!file_exists($this->getDataFolder())) @mkdir($this->getDataFolder());
                 $this->config = new Config($this->getDataFolder()."config.yml", CONFIG::YAML, array(
                         "block-limit" => -1,
-			"wand-item" => 271,
+			"wand-item" => 392,
                 ));
                 $this->config->save();
                 $this->wanditem = $this->config->get("wand-item");
-                $this->prifks = "§5[§bWE§f-§6Potato§5]§2";
+                $this->prifks = "§5[§eWE§f-§6P§5]§2";
 	}
 
         public function onBreak(BlockBreakEvent $event){
