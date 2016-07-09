@@ -33,7 +33,7 @@ class WorldEditor extends PluginBase implements Listener, CommandExecutor{
                 ));
                 $this->config->save();
                 $this->wanditem = $this->config->get("wand-item");
-                $this->prifks = "§5[§bWE§f-§6Potato§5]§2";
+                $this->prifks = "§5[§eWE§6P§5]§2";
 	}
 
         public function onBreak(BlockBreakEvent $event){
@@ -96,3 +96,171 @@ class WorldEditor extends PluginBase implements Listener, CommandExecutor{
 			$count = " ($count)";
 		}
                 }
+		$player->sendMessage($this->prifks."The first place(".$session["selection"][0][0].", ".$session["selection"][0][1].", ".$session["selection"][0][2].")".$count."[".$this->ID[$player->getName()].":".$this->Meta[$player->getName()]."]");
+                $this->sessions[$player->getName()]["selection"] = $session["selection"];
+                return true;
+	}
+
+	public function setPosition2($player,$position){
+                if(isset($this->sessions[$player->getName()])){
+                $this->sessions[$player->getName()]["selection"][1] = array(round($position->x), round($position->y), round($position->z),$position->level);
+                $count = $this->countBlocks($this->sessions[$player->getName()]["selection"]);
+                if($count === false){
+			$count = "";
+		}else{
+			$count = " ($count)";
+		}
+                $session["selection"] = $this->sessions[$player->getName()]["selection"];
+                }else{
+                $session = $this->session($player);
+		$session["selection"][1] = array(round($position->x), round($position->y), round($position->z),$position->level);
+		$count = $this->countBlocks($session["selection"]);
+		if($count === false){
+			$count = "";
+		}else{
+			$count = " ($count)";
+		}
+                }
+
+		$player->sendMessage($this->prifks."Second place(".$session["selection"][1][0].", ".$session["selection"][1][1].", ".$session["selection"][1][2].")".$count."[".$this->ID2[$player->getName()].":".$this->Meta2[$player->getName()]."]");
+                $this->sessions[$player->getName()]["selection"] = $session["selection"];
+		return true;
+	}
+
+        public function onCommand(CommandSender $sender, Command $command, $label, array $args){
+                $username = $sender->getName();
+                $cmd = $command->getName();
+                if($cmd{0} === "/"){
+                $cmd = substr($cmd, 1);
+                }
+		switch($cmd){
+			case "paste":
+                                if(!($sender instanceof Player)){
+                                $sender->sendMessage($this->prifks."Please use in the game.");
+                                return true;
+                                break;
+                                }
+				$session = $this->session($sender);
+
+				$this->W_paste($session["clipboard"], new Position($sender->getX(), $sender->getY(), $sender->getZ(), $sender->getlevel()),$sender);
+				return true;
+                                break;
+			case "copy":
+                                if(!($sender instanceof Player)){
+                                $sender->sendMessage($this->prifks."Please use in the game.");
+                                return true;
+                                break;
+                                }
+				$session = $this->session($sender);
+				$count = $this->countBlocks($session["selection"], $startX, $startY, $startZ);
+				if($count > $session["block-limit"] and $session["block-limit"] > 0){
+					$sender->sendMessage($this->prifks."Block limit of ".$session["block-limit"]." exceeded, tried to copy $count block(s).");
+                                        return true;
+					break;
+				}
+
+				$blocks = $this->W_copy($session["selection"], $sender);
+				if(count($blocks) > 0){
+					$offset = array($startX - $sender->getx() - 0.5, $startY - $sender->gety(), $startZ - $sender->getz() - 0.5);
+					$session["clipboard"] = array($offset, $blocks);
+                                        $this->sessions[$sender->getName()]["clipboard"] = $session["clipboard"];
+				}
+                                return true;
+				break;
+			case "cut":
+				if(!($sender instanceof Player)){
+                                $sender->sendMessage($this->prifks."Please use in the game.");
+                                return true;
+                                break;
+                                }
+				$session = $this->session($sender);
+				$count = $this->countBlocks($session["selection"], $startX, $startY, $startZ);
+				if($count > $session["block-limit"] and $session["block-limit"] > 0){
+					$sender->sendMessage($this->prifks."Block limit of ".$session["block-limit"]." exceeded, tried to cut $count block(s).");
+                                        return true;
+					break;
+				}
+
+				$blocks = $this->W_cut($session["selection"], $sender);
+				if(count($blocks) > 0){
+					$offset = array($startX - $sender->getx() - 0.5, $startY - $sender->gety(), $startZ - $sender->getz() - 0.5);
+					$session["clipboard"] = array($offset, $blocks);
+                                        $this->sessions[$sender->getName()]["clipboard"] = $session["clipboard"];
+				}
+                                return true;
+				break;
+			case "toggleeditwand":
+				if(!($sender instanceof Player)){
+                                $sender->sendMessage($this->prifks."ゲーム内で使用してください.");
+                                return true;
+                                break;
+                                }
+				$session = $this->session($sender);
+				$session["wand-usage"] = $session["wand-usage"] == true ? false:true;
+                                $this->sessions[$sender->getName()]["wand-usage"] = $session["wand-usage"];
+				$sender->sendMessage($this->prifks."ワンドを ".($session["wand-usage"] === true ? "enabled":"disabled")."に設定しました.");
+                                return true;
+				break;
+			case "wand":
+				if(!($sender instanceof Player)){
+                                $sender->sendMessage($this->prifks."ゲーム内で使用してください.");
+                                return true;
+                                break;
+                                }
+				if($sender->getInventory()->getItem($this->config->get("wand-item"))->getID() === Item::get($this->config->get("wand-item"))->getID()){
+					$sender->sendMessage($this->prifks."あなたはすでにワンドを持っています.");
+                                        return true;
+					break;
+				}elseif($sender->getGamemode() === 1){
+					$sender->sendMessage($this->prifks."あなたはクリエイティブモードです");
+				}else{
+                                        $sender->getInventory()->addItem(Item::get($this->config->get("wand-item")));
+                                        $sender->sendMessage($this->prifks."ブロックを壊して最初の場所を,ブロックをタップして2番目の場所を指定してください.");
+				}
+                                return true;
+				break;
+			case "desel":
+				if(!($sender instanceof Player)){
+                                $sender->sendMessage($this->prifks."ゲーム内で使用してください.");
+                                return true;
+                                break;
+                                }
+				$session = $this->session($sender);
+				$session["selection"] = array(false, false);
+                                $this->sessions[$sender->getName()]["selection"] = $session["selection"];
+				$sender->sendMessage($this->prifks."選択を削除しました");
+                                return true;
+				break;
+			case "limit":
+				if(!isset($args[0]) or trim($args[0]) === ""){
+					$sender->sendMessage($this->prifks."使用的方法: //limit <limit>");
+                                        return true;
+					break;
+				}
+				$limit = intval($args[0]);
+				if($limit < 0){
+					$limit = -1;
+				}
+				if($this->config->get("block-limit") > 0){
+					$limit = $limit === -1 ? $this->config->get("block-limit"):min($this->config->get("block-limit"), $limit);
+				}
+				$session["block-limit"] = $limit;
+                                $this->sessions[$sender->getName()]["block-limit"] = $session["block-limit"];
+				$sender->sendMessage($this->prifks."ブロック数制限を".($limit === -1 ? "infinite":$limit)." に変更しました.");
+                                return true;
+				break;
+			case "pos1":
+                                if(!($sender instanceof Player)){
+			        $sender->sendMessage($this->prifks."ゲーム内で使用してください.");
+			        return true;
+			        break;
+                                }
+                                $this->setPosition1($sender, new Position($sender->getX() - 0.5, $sender->getY(), $sender->getZ() - 0.5, $sender->getlevel()));
+                                return true;
+                                break;
+			case "pos2":
+                                if(!($sender instanceof Player)){
+                                $sender->sendMessage($this->prifks."ゲーム内で使用してください.");
+                                return true;
+                                break;
+                  
