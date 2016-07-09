@@ -2,10 +2,10 @@
 -Version: vINDEV now.
 
 ## Features✨
-* //help
-* //cut
-* //copy
-* //paste
-* //sphere
-* //hsphere
-* ETC...
+- [x] //help
+- [ ] //cut
+- [ ] //copy
+- [ ] //paste
+- [ ] //sphere
+- [ ] //hsphere
+- [ ] etc..!
