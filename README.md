@@ -1,5 +1,7 @@
 # WorldEditPotato
--Version: v1.1 now.
+-Version: v1.1pre1 now.
+
+###Download Link
 [Download](https://github.com/Yoyu666/WorldEditPotato/releases)
 
 ## Features✨
