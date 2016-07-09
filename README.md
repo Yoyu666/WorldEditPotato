@@ -1,5 +1,6 @@
 # WorldEditPotato
 -Version: v1.1 now.
+[Download](https://github.com/Yoyu666/WorldEditPotato/releases)
 
 ## Features✨
 - [x] use Potato to set pos1{break}..pos2{tap}
@@ -20,5 +21,5 @@
 - [ ] //undo
 * etc.
 
-![WorldEdit](http://img10.deviantart.net/af75/i/2014/242/1/9/kawaii_potato_by_hashtagpony-d7xbs1t.png)
+![WorldEditPotato](http://img10.deviantart.net/af75/i/2014/242/1/9/kawaii_potato_by_hashtagpony-d7xbs1t.png)
 =========
