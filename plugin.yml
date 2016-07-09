@@ -1,0 +1,83 @@
+name: WorldEditPotato
+main: WorldEditor\WorldEditor
+version: INDEV_b1
+api: 2.0.0
+author: HuaYoyu
+website: 
+commands:
+ toggleeditwand:
+  description: 
+  usage: "/toggleeditwand"
+  permission: worldeditor.command
+ /cut:
+  description: 
+  usage: "//cut"
+  permission: worldeditor.command
+ /copy:
+  description:  THIS THIS THIS ALL
+  usage: "//copy"
+  permission: worldeditor.command
+ /paste:
+  description: 
+  usage: "//paste"
+  permission: worldeditor.command
+ /sphere:
+  description: make a potato
+  usage: "//sphere <block> <radius>"
+  permission: worldeditor.command
+ /hsphere:
+  description:  make a potato with no have insde block
+  usage: "//hsphere <block> <radius>"
+  permission: worldeditor.command
+ /desel:
+  description: 
+  usage: "//desel"
+  permission: worldeditor.command
+ /limit:
+  description: 
+  usage: "//limit <limit>"
+  permission: worldeditor.command
+ /pos1:
+  description: 
+  usage: "//pos1"
+  permission: worldeditor.command
+ /pos2:
+  description: 
+  usage: "//pos2"
+  permission: worldeditor.command
+ /set:
+  description: 
+  usage: "//set <blockID>"
+  permission: worldeditor.command
+ /replace:
+  description: 
+  usage: "//replace <fromBlock> <toBlock>"
+  permission: worldeditor.command
+ /help:
+  description: to see all WD command
+  usage: "//help"
+  permission: worldeditor.command
+ /wand:
+  description: 
+  usage: "//wand"
+  permission: worldeditor.command
+ /undo:
+  description: 
+  usage: "//undo"
+  permission: worldeditor.command
+ /tree:
+  description: 
+  usage: "//tree <size>"
+  permission: worldeditor.command
+ /flower:
+  description: 
+  usage: "//flower <size>"
+  permission: worldeditor.command
+permissions:
+    worldeditor:
+        default: op
+        description: "All the permissions to use the World Editor"
+        children:
+            worldeditor.command:
+                default: op
+                description: "Allow the usage of the WorldEditor command"
