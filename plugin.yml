@@ -1,12 +1,12 @@
 name: WorldEditPotato
 main: WorldEditor\WorldEditor
-version: INDEV_b1
+version: v1.1pre2
 api: 2.0.0
 author: HuaYoyu
 website: "https://github.com/Yoyu666/WorldEditPotato"
 commands:
  toggleeditwand:
-  description: 
+  description: Toggles the edit wand selection mode, allowing you to use the edit wand item normally.
   usage: "/toggleeditwand"
   permission: worldeditor.command
  /cut:
@@ -34,15 +34,15 @@ commands:
   usage: "//desel"
   permission: worldeditor.command
  /limit:
-  description: 
+  description: Set a maximum number of blocks to change at most for all operations. This only affects yourself. Use this to prevent catastrophic accidents.
   usage: "//limit <limit>"
   permission: worldeditor.command
  /pos1:
-  description: Set selection position #1 to the block above the one that you are standing on.
+  description: Set selection position (1) to the block above the one that you are standing on.
   usage: "//pos1"
   permission: worldeditor.command
  /pos2:
-  description: Set selection position #2 to the block above the one that you are standing on.
+  description: Set selection position (2) to the block above the one that you are standing on.
   usage: "//pos2"
   permission: worldeditor.command
  /set:
@@ -58,7 +58,7 @@ commands:
   usage: "//help"
   permission: worldeditor.command
  /wand:
-  description: 
+  description: Gives you the "edit wand". Break a block with this tool to select position 1 and touch a block to selection position 2.
   usage: "//wand"
   permission: worldeditor.command
  /undo:
