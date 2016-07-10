@@ -12,19 +12,19 @@
 - [x] //cut
 - [x] //copy
 - [x] //paste
-- [x] //sphere <block> <radius>
-- [x] //hsphere <block> <radius>
+- [x] //sphere `<block> <radius>`
+- [x] //hsphere `<block> <radius>`
 - [x] //desel
-- [x] //limit <limit>
+- [x] //limit `<limit>`
 - [x] //pos1
 - [x] //pos2
-- [x] //set <blockID>
-- [ ] //replace <fromBlock> <toBlock>
+- [x] //set `<blockID>`
+- [ ] //replace `<fromBlock> <toBlock>`
 - [x] //help
 - [x] //wand
 - [ ] //undo
-- [ ] //tree <size>
-- [ ] //flower <size>
+- [ ] //tree `<size>`
+- [ ] //flower `<size>`
 
 ![WorldEditPotato](http://img10.deviantart.net/af75/i/2014/242/1/9/kawaii_potato_by_hashtagpony-d7xbs1t.png)
 =========
