@@ -1,7 +1,7 @@
-# WorldEditPotato <em>for McpeSever </em>
+# WorldEditPotato <em>for Your Mcpe Sever </em>
 * WorldEditPotato Plugin is a port of the WorldEdit,done for [Genisys](https://github.com/iTXTech/Genisys).
 
-####Download Link
+####Download Link & Installation.
 * Version: v1.1pre1 now.- [Download](https://github.com/Yoyu666/WorldEditPotato/releases)
 - Drop the correct WorldEditor version into the MCPEServerApp's `plugins/` folder.
 - Restart the server. The plugin will be loaded :D!
