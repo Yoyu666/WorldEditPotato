@@ -1,10 +1,12 @@
-# WorldEditPotato
--Version: v1.1pre1 now.
+# WorldEditPotato <em>for McpeSever </em>
+* WorldEditPotato Plugin is a port of the WorldEdit,done for [Genisys](https://github.com/iTXTech/Genisys).
 
 ####Download Link
-* [Download](https://github.com/Yoyu666/WorldEditPotato/releases)
+* Version: v1.1pre1 now.- [Download](https://github.com/Yoyu666/WorldEditPotato/releases)
+- Drop the correct WorldEditor version into the MCPEServerApp's `plugins/` folder.
+- Restart the server. The plugin will be loaded :D!
 
-## Features✨
+## Features✨ [Commands]
 - [x] use Potato to set pos1{break}..pos2{tap}
    - [x] edit config.yml to change other items to pos1,2
 - [x] //cut
@@ -16,7 +18,7 @@
 - [x] //limit <limit>
 - [x] //pos1
 - [x] //pos2
-- [ ] //set <blockID>
+- [x] //set <blockID>
 - [ ] //replace <fromBlock> <toBlock>
 - [x] //help
 - [x] //wand
