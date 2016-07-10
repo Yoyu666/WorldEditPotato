@@ -50,15 +50,15 @@ commands:
   usage: "//set <blockID>"
   permission: worldeditor.command
  /replace:
-  description: 
+  description: Replace all blocks of the specified block with another block(s) inside the region.
   usage: "//replace <fromBlock> <toBlock>"
   permission: worldeditor.command
  /help:
-  description: to see all WD command.
+  description: Show list of commands.
   usage: "//help"
   permission: worldeditor.command
  /wand:
-  description: Gives you the "edit wand". Break a block with this tool to select position 1 and touch a block to selection position 2.
+  description: Gives you the "edit wand".
   usage: "//wand"
   permission: worldeditor.command
  /undo:
