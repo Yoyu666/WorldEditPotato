@@ -34,4 +34,4 @@ You can Tap [HERE](https://github.com/Yoyu666/WorldEditPotato/releases)to downlo
 * My [Google+](https://plus.google.com/112806261931025159399).
 
 
-[WorldEditPotato](http://img10.deviantart.net/af75/i/2014/242/1/9/kawaii_potato_by_hashtagpony-d7xbs1t.png)
+![WorldEditPotato](http://img10.deviantart.net/af75/i/2014/242/1/9/kawaii_potato_by_hashtagpony-d7xbs1t.png)
