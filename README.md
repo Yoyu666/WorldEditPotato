@@ -2,7 +2,9 @@
 * WorldEditPotato Plugin is a port of the WorldEdit,done for [Genisys](https://github.com/iTXTech/Genisys).
 
 ####Download Link & Installation.
-* Version: v1.1pre1 now.- [Download](https://github.com/Yoyu666/WorldEditPotato/releases)
+* CurrentVersion: v1.5 
+* OlderVersion : v1.1pre1
+You can Tap [HERE](https://github.com/Yoyu666/WorldEditPotato/releases)to download this Plugins!
 - Drop the correct WorldEditor version into the MCPEServerApp's `plugins/` folder.
 - Restart the server. The plugin will be loaded :D!
 
@@ -19,12 +21,12 @@
 - [x] //pos1
 - [x] //pos2
 - [x] //set `<blockID>`
-- [ ] //replace `<fromBlock> <toBlock>`
+- [x] //replace `<fromBlock> <toBlock>`
 - [x] //help
 - [x] //wand
-- [ ] //undo
-- [ ] //tree `<size>`
-- [ ] //flower `<size>`
+- [x] //undo
+- [ ] //tree `<size>` no test yet...
+- [x] //flower `<size>`
 
 ![WorldEditPotato](http://img10.deviantart.net/af75/i/2014/242/1/9/kawaii_potato_by_hashtagpony-d7xbs1t.png)
 =========
