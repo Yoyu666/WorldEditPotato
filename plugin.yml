@@ -1,13 +1,13 @@
 name: WorldEditPotato
 main: WorldEditor\WorldEditor
-version: v1.1pre2
+version: 1.5
 api: 2.0.0
 author: HuaYoyu
 website: "https://github.com/Yoyu666/WorldEditPotato"
 commands:
  toggleeditwand:
   description: Toggles the edit wand selection mode, allowing you to use the edit wand item normally.
-  usage: "/toggleeditwand"
+  usage: "//toggleeditwand"
   permission: worldeditor.command
  /cut:
   description: Cuts the currently selected region.
